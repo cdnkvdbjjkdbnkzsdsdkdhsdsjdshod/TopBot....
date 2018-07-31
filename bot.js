@@ -82,7 +82,7 @@ client.on('message',async message => {
       SPEAK: false
     });
     setInterval(() => {
-      c.setName(`Voice Online : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]`)
+      c.setName(`Tops Online : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]`)
     },1000);
   });
   }
@@ -320,31 +320,7 @@ ${message.guild.roles.size}
 
 //.
 
-client.on('guildCreate', guild => {
-var message = "zg";
-         const embed = new Discord.RichEmbed()
-     .setColor("GOLD")
-     .setTitle('S Bot Link Click Here .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=465885551329804288&permissions=8&scope=bot')
-  .setDescription(`**
-  New Server Add S Bot ✅
-اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("465340887279468564").sendEmbed(embed)
-});
 
-client.on('guildDelete', guild => {
-var message = "zg";
-         const embed = new Discord.RichEmbed()
-     .setColor("GOLD")
-     .setTitle('S Bot Link Click Here .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=465885551329804288&permissions=8&scope=bot')
-  .setDescription(`**
-  Server Kicked S Bot :cry:
-اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("465340887279468564").sendEmbed(embed)
-});
 
 
 
@@ -364,12 +340,6 @@ client.on('message', message => {
 .setColor('RANDOM')
         .setDescription(`**
         
-╭━━━╮╭━━╮╱╱╱╭╮
-┃╭━╮┃┃╭╮┃╱╱╭╯╰╮
-┃╰━━╮┃╰╯╰┳━┻╮╭╯
-╰━━╮┃┃╭━╮┃╭╮┃┃
-┃╰━╯┃┃╰━╯┃╰╯┃╰╮
-╰━━━╯╰━━━┻━━┻━╯
 General's Commands. :earth_asia: 
 $server - معلومات عن سيرفرك :scroll:   
 $id - الأيدي حقك :flashlight: 
@@ -663,18 +633,6 @@ client.on("message", message => {
 		} 
 	} 
 });
-client.on('message', message => {
-            if(!message.channel.guild) return;
-var args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('-bcall')){
- if (message.author.id !== '456641975932813345') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
- if(!message.author.id === '456641975932813345') return;
-message.channel.sendMessage('جار ارسال الرسالة |✅')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
 
   client.on('message', message => {
 if(message.content == '<@465885551329804288>') {
@@ -685,49 +643,7 @@ message.channel.stopTyping()
 }
 });
   
-	   client.on('message', message => {
-          
 
-           if (message.content.startsWith(prefix + "user")) {
-                     if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
-
-                message.guild.fetchInvites().then(invs => {
-      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
-      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-      var moment = require('moment');
-      var args = message.content.split(" ").slice(1);
-let user = message.mentions.users.first();
-var men = message.mentions.users.first();
- var heg;
- if(men) {
-     heg = men
- } else {
-     heg = message.author
- }
-var mentionned = message.mentions.members.first();
-  var h;
- if(mentionned) {
-     h = mentionned
- } else {
-     h = message.member
- }
-        moment.locale('ar-TN');
-      var id = new  Discord.RichEmbed()
-       
-    .setColor("#0a0909")
- .setThumbnail(message.author.avatarURL)
-.addField(': تاريخ دخولك للديسكورد',` \`${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} \`**\n ${moment(heg.createdTimestamp).fromNow()}**` ,true) 
-.addField(': تاريخ دخولك لسيرفرنا', `\`${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')}  \` **\n ${moment(h.joinedAt).fromNow()} **`, true)
-
-.setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')  
-    message.channel.sendEmbed(id);
-})
-}
-    
-
-         
-     });
 
 
 
@@ -766,17 +682,6 @@ client.on('message', message => {
 message.channel.send(embed)
 }
 });   
-client.on('message',function(message) {
-   if(message.content === prefix + "inv") {
-       if(!message.channel.guild) return;
-       var mmmmEmbed = new Discord.RichEmbed()
-       .setAuthor(client.user.username)
-       .setTitle(':eight_pointed_black_star: Click Here.')
-       .setURL(`https://discordapp.com/oauth2/authorize/?permissions=268443710&scope=bot&client_id=465885551329804288`)
-       .setFooter(`- Requested By: ${message.author.tag}`,message.author.avatarURL);
-       message.channel.send(mmmmEmbed)
-   }
-});
 
 
 
